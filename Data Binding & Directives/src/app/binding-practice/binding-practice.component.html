@@ -1,0 +1,22 @@
+<!-- // String interpolation -->
+<h1>{{appName}}</h1>
+
+<!-- Property Binding, userName property is bind to an attribute of a DOM element <input> tag.-->
+<h1>{{propertyName}}</h1>
+<input type="text" [value]="userName">
+
+<!-- Event Binding : on click here event trigerred  -->
+<h1>Event Binding</h1>
+<button (click)="showData($event)">Click here</button><br>
+<button on-click="showData1()">Click here</button>
+
+<!-- class binding -->
+<h1>Class Binding</h1>
+<p [class]="myCSSClass">This paragraph class comes from *myClass* property </p>
+<p [class.blue]="applyCSSClass">This paragraph class does not apply</p>
+
+<!-- Two way binding -->
+<h1>Two Way Binding</h1>
+<input type="text" [(ngModel)]="userName">
+<p>Two way binding! Hello {{ userName }}!</p>
+

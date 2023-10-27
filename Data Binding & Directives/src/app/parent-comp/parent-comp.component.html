@@ -1,0 +1,18 @@
+
+<!-- Input allows you to pass data from a parent component to a child component. 
+It is often used to send configuration or data to a child component, which can then use this data for rendering or processing. -->
+
+<!-- Declare an variable title in ts class of parent and bind it in html using interpolation and in the child class have the value using @Input and title. -->
+<h2>@Input example</h2>
+<app-child-comp [title]="parentTitle"></app-child-comp>
+
+
+<!-- Output allows you to emit custom events from a child component to its parent component. 
+This enables the child component to notify the parent component of certain actions or events, and the parent component can respond accordingly. -->
+
+
+<!-- In this example, we use @Output() to emit the counterIncremented event from the child component, 
+and the parent component listens to this event using event binding and responds to it by updating the counterValue -->
+<h2>@Output example</h2>
+<app-child-comp (counterIncremented)="handleCounterIncrement($event)"></app-child-comp>
+<p>Counter Value: {{ counterValue }}</p>

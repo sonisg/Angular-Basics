@@ -1,0 +1,58 @@
+<h1>STRUCTURAL DIRECTIVES</h1>
+
+<!-- Structural directives change the structure of DOM by adding or removing elements. It is denoted by * sign with three pre-defined directives NgIf, NgFor and NgSwitch -->
+<!-- NgIf : NgIf directive is used to display or hide data in your application based on the condition becomes true or false.-->
+
+<h2>ngIf Example!</h2>
+<div *ngIf = "true"> NgIf set to true</div>
+ 
+<!-- NgIfElse Example ngIfElse is similar to ngIf except, it provides option to render content during failure scenario as well. -->
+<h2>ngIfElse Example!</h2>
+ <div *ngIf="isLogIn; else isLogOut">
+     Hello you are logged in.
+ </div>
+ <ng-template #isLogOut>
+    You're logged out..
+</ng-template>
+
+<!-- ngFor is used to repeat a portion of elements from the list of items. -->
+<h2>ngFor directive</h2>
+ <ul>
+     <li *ngFor="let l of list">
+{{l}} </li>
+</ul>
+
+<!-- NgSWitch is used to check multiple conditions and keep the DOM structure as simple and easy to understand -->
+<h2>ngSwitch directive</h2>
+ <ul [ngSwitch]="logInName">
+     <li *ngSwitchCase="'user'">
+         <p>User is logged in..</p>
+     </li>
+     <li *ngSwitchCase="'admin'">
+         <p>admin is logged in</p>
+     </li>
+     <li *ngSwitchDefault>
+         <p>Please choose login name</p>
+</li> </ul>
+
+<!-- Attribute directives performs the appearance or behavior of DOM elements or components. -->
+<h1>ATTRIBUTE DIRECTIVES</h1>
+
+<!-- ngStyle directive is used to add dynamic styles -->
+<h2>ngStyle</h2>
+<p [ngStyle]="{'color': 'blue', 'font-size': '14px'}"> paragraph style is applied using ngStyle</p>
+
+<!-- ngClass is used to add or remove CSS classes in HTML elements. -->
+<h2>ngClass</h2>
+<div class="container">
+    <br/>
+    <div *ngFor="let user of users" [ngClass]="{
+      'highlight':user.userName === 'User1'
+    }">
+      {{ user.userName }}
+    </div>
+  </div>
+
+
+  <h3>ng-template</h3>
+<ng-template>ng-template tag is a virtual element</ng-template>
