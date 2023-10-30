@@ -1,0 +1,58 @@
+<h1>PIPES</h1>
+
+ <!-- Pipes are referred as filters. It helps to transform data and manage data within interpolation, denoted by {{ | }}. It accepts data, arrays, integers and strings as inputs which are separated by ‘|’ symbol. This chapter explains about pipes in detail. -->
+
+<div>
+  Today's date :- {{presentDate}}
+  Short date :- {{presentDate | date:'shortDate' }} <br/>
+Full date :- {{presentDate | date:'fullDate' }} <br/> 
+Formatted date:- {{presentDate | date:'M/dd/yyyy'}} <br/> 
+Hours and minutes:- {{presentDate | date:'h:mm'}}
+</div>
+
+<div>
+  Date with uppercase :- {{presentDate | date:'fullDate' | uppercase}} <br/>
+  Date with lowercase :- {{presentDate | date:'medium' | lowercase}} <br/>
+</div>
+
+<div style="text-align:left">
+  <h3> Currency Pipe</h3>
+  <p>{{ price | currency:'EUR':true}}</p>
+  <p>{{ price | currency:'INR' }}</p>
+</div>
+
+<div>
+  <h3>Start index:- {{Fruits | slice:2}}</h3>
+  <h3>Start and end index:- {{Fruits | slice:1:4}}</h3> 
+  <h3>Negative index:- {{Fruits | slice:-2}}</h3>
+  <h3>Negative start and end index:- {{Fruits | slice:-4:-2}}</h3>
+     </div>
+
+     <div style="text-align:left">
+      <h3>Decimal Pipe</h3>
+      <p> {{decimalNum1 | percent:'2.2'}} </p>
+</div>
+
+<div style="text-align:left">
+  <p> Apply formatting:- {{decimalNum1 | number:'3.1'}} </p>
+  <p> Apply formatting:- {{decimalNum1 | number:'2.1-4'}} </p> </div>
+
+  <div style="text-align:left">
+    <p ngNonBindable>{{ jsonData }}</p> (1)
+    <p>{{ jsonData }}</p>
+    <p ngNonBindable>{{ jsonData | json }}</p>
+    <p>{{ jsonData | json }}</p>
+ </div>
+
+<h1>Async PIPES</h1>
+
+<!-- If data comes in the form of observables, then Async pipe subscribes to an observable and returns the transmitted values. -->
+<div>
+  Seconds changing in Time: {{ timeChange | async }}
+</div>
+
+<h1>Custom Pipe</h1>
+<div>
+  <p> DigitCount Pipe </p>
+  <h1>{{ digits | digitcount }}</h1>
+</div>
