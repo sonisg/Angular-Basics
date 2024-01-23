@@ -1,0 +1,9 @@
+.marker-label {
+    background-color: #000;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    padding: 4px;
+    border-radius: 50%;
+  }
